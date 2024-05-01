@@ -1,0 +1,14 @@
+{
+  "name": "fitbitapi",
+  "version": "1.0.0",
+  "description": "interface between game and heartrate monitor",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
