@@ -10,18 +10,21 @@ const PORT = 3000; // Set your desired port number
 app.use(express.json());
 
 // Dummy data to simulate a database
-let heartbeats = [];
+let heartrate = 0;
 
 // POST endpoint to add an item
-app.post('/heartbeats', (req, res) => {
-  const heartbeat = req.body;
-  heartbeats.push(heartbeat);
+app.post('/heartrate', (req, res) => {
+  const heartbeat = req.body.heartrate;
+  console.log(heartbeat);
+  heartrate = heartbeat;
   res.status(201).json({ message: 'Heartbeat added successfully', heartbeat: heartbeat });
 });
 
 // GET endpoint to retrieve all items
-app.get('/heartbeats', (req, res) => {
-  res.status(200).json(heartbeats);
+app.get('/heartrate', (req, res) => {
+  res.status(200).json({
+    "heartrate": heartrate
+});
 });
 
 // Start the server
