@@ -1,4 +1,4 @@
-
+// MODIFIED - changed items and related terms to 'heartbeats" and related terms
 // Import required modules
 const express = require('express');
 
@@ -10,18 +10,18 @@ const PORT = 3000; // Set your desired port number
 app.use(express.json());
 
 // Dummy data to simulate a database
-let items = [];
+let heartbeats = [];
 
 // POST endpoint to add an item
-app.post('/items', (req, res) => {
-  const newItem = req.body;
-  items.push(newItem);
-  res.status(201).json({ message: 'Item added successfully', item: newItem });
+app.post('/heartbeats', (req, res) => {
+  const heartbeat = req.body;
+  heartbeats.push(heartbeat);
+  res.status(201).json({ message: 'Heartbeat added successfully', heartbeat: heartbeat });
 });
 
 // GET endpoint to retrieve all items
-app.get('/items', (req, res) => {
-  res.status(200).json(items);
+app.get('/heartbeats', (req, res) => {
+  res.status(200).json(heartbeats);
 });
 
 // Start the server
